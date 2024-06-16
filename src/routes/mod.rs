@@ -1,7 +1,12 @@
+use std::sync::Arc;
+
 use axum::Router;
 
-pub mod health;
+use crate::db::DbPool;
 
-pub fn create_routes()->Router{
-    Router::new().merge(health::routes())
+pub mod health;
+pub mod user;
+
+pub fn create_routes(pool: Arc<DbPool>)->Router{
+    Router::new().merge(health::routes()).merge(user::routes(pool))
 }
