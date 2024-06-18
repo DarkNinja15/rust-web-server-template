@@ -19,7 +19,7 @@ r2d2 = "0.8.9"
 r2d2-diesel = "1.0.0"
 ```
 
-## Install distel_cli
+## Install diseel_cli
 
 ```bash
 cargo install diesel_cli --no-default-features --features postgres
